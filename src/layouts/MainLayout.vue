@@ -9,7 +9,6 @@
     </q-page-container>
   </q-layout>
 </template>
-
 <script>
 import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
@@ -33,6 +32,7 @@ const linksList = [
     icon: "chat",
     link: "https://chat.quasar.dev",
   },
+  // njjjn
   {
     title: "Forum",
     caption: "forum.quasar.dev",
