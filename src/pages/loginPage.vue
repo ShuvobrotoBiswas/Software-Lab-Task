@@ -5,15 +5,21 @@
     </div>
     <div class="row">
       <span class="text-h6">New here ?</span>
-      <q-btn dense flat label="create account" to="signup" color="orange"></q-btn>
+      <q-btn
+        dense
+        flat
+        label="create account"
+        to="signup"
+        color="orange"
+      ></q-btn>
     </div>
     <div class="q-py-md">
       <q-input
         color="orange"
         standout
         bottom-slots
-        v-model="text"
-        label="Label"
+        v-model="email"
+        label="Email Address"
         clearable
       >
         <template v-slot:prepend>
@@ -24,19 +30,16 @@
         color="orange"
         standout
         bottom-slots
-        v-model="text"
-        label="Label"
-        counter
+        v-model="password"
+        label="Password"
         clearable
       >
         <template v-slot:prepend>
-          <q-icon name="place" />
+          <q-icon name="lock" />
         </template>
         <template v-slot:append>
-          <q-icon name="favorite" />
+          <q-btn flat label="forgot?" color="orange" to="/forgot"></q-btn>
         </template>
-
-        <template v-slot:hint> Field hint </template>
       </q-input>
       <div class="q-py-md">
         <q-btn
@@ -51,9 +54,31 @@
     </div>
     <div class="text-center q-py-md">or login with</div>
     <div class="row flex-center">
-      <q-btn dense  class="my-bdr q-mr-sm" label="G" style="width:100px" size="20px" outline></q-btn>
-      <q-btn dense icon="apple" class="my-bdr q-mr-sm" style="width:100px" size="20px" outline></q-btn>
-      <q-btn dense icon="facebook" color="blue" class="my-bdr q-mr-sm" style="width:100px" size="20px" outline></q-btn>
+      <q-btn
+        dense
+        class="my-bdr q-mr-sm"
+        label="G"
+        style="width: 100px"
+        size="20px"
+        outline
+      ></q-btn>
+      <q-btn
+        dense
+        icon="apple"
+        class="my-bdr q-mr-sm"
+        style="width: 100px"
+        size="20px"
+        outline
+      ></q-btn>
+      <q-btn
+        dense
+        icon="facebook"
+        color="blue"
+        class="my-bdr q-mr-sm"
+        style="width: 100px"
+        size="20px"
+        outline
+      ></q-btn>
     </div>
   </div>
 </template>
@@ -64,7 +89,8 @@ import { ref } from "vue";
 export default {
   setup() {
     return {
-      text: ref(""),
+      email: ref(""),
+      password: ref(""),
     };
   },
 };
