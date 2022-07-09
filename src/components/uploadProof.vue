@@ -1,70 +1,36 @@
 <template>
-  <div class="q-pa-md">
+  <div>
     <q-form @submit.prevent="profilePic">
-      <div class="q-py-md">
-        <p class="text-h6">Last step of signup</p>
-        <span class="text-bold text-h4">Verification</span>
+      <div class="row flex-center">
+        <q-img
+          :src="imageUrl"
+          sizes="180px"
+          style="border-radius: 50%; height: 180px; width: 170px"
+        ></q-img>
       </div>
-      <div class="text-h6">
-        Attached proof of Department of Agriculture registrations i.e. Florida
-        Fresh , USDA Approvod, USDA Organic
-      </div>
-      <div class="q-py-md full-width">
-        <div>
-          <q-file
-            color="teal"
-            type="file"
-            borderless
-            v-model="file"
-            label="Attach proof of registration"
-            @update:model-value="handleUpload()"
-          >
-            <template v-slot:append>
-              <q-btn
-                round
-                color="orange-9"
-                size="18px"
-                icon="photo_camera"
-              ></q-btn>
-            </template>
-          </q-file>
-        </div>
-        <div class="row flex-center">
-          <q-img :src="imageUrl" sizes="400px"></q-img>
-        </div>
-      </div>
-
-      <!-- formdata -->
-
-      <div class="q-py-md row flex-center fixed-bottom">
-        <q-btn
+      <div class="q-pa-md">
+        <q-file
           rounded
-          class="q-mr-sm"
-          to="/signupPage3"
-          size="20px"
-          icon="keyboard_backspace"
-          flat
-          color="black"
-        />
-        <q-btn
-          rounded
-          label="submit"
-          style="width: 210px"
-          size="20px"
-          to="signupPage5"
-          type="submit"
-          color="orange-9"
-        />
+          class="bg-grey-3 text-bold"
+          style="width: 250px; border-radius: 30px"
+          outlined
+          type="file"
+          v-model="file"
+          label="upload new picture"
+          @update:model-value="handleUpload()"
+        >
+        </q-file>
       </div>
     </q-form>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
 import { defineComponent } from "vue";
+import { ref } from "vue";
 import axios from "axios";
-export default {
+export default defineComponent({
+  name: "uploadProof",
   setup() {
     const file = ref(null);
     const imageUrl = ref("");
@@ -74,6 +40,7 @@ export default {
         imageUrl.value = URL.createObjectURL(file.value);
       }
     };
+
     return {
       document,
       other: true,
@@ -83,6 +50,7 @@ export default {
       getFile: true,
     };
   },
+
   methods: {
     onFileSelected(event) {
       console.log(event.target);
@@ -111,10 +79,17 @@ export default {
         });
     },
   },
-};
+});
 </script>
 <style lang="sass" scoped>
-.my-bdr
-  border: 2px
-  border-radius: 355px
+.my-card
+  width: 100%
+  max-width: 250px
+
+.row > div
+  padding: 10px 15px
+  // background: rgba(86,61,124,.15)
+  // border: 1px solid rgba(86,61,124,.2)
+.row + .row
+  margin-top: 1rem
 </style>

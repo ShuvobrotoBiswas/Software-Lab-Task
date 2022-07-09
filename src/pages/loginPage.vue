@@ -38,7 +38,7 @@
           <q-icon name="lock" />
         </template>
         <template v-slot:append>
-          <q-btn flat label="forgot?" color="orange" to="/forgot"></q-btn>
+          <q-btn flat label="forgot?" color="orange" to="/forgotPassword"></q-btn>
         </template>
       </q-input>
       <div class="q-py-md">
