@@ -1,6 +1,8 @@
 <template>
   <div class="q-pa-md">
-    <q-btn color="purple" @click="showNotif" label="Show Notification" />
+    <h1 class="row text-center">Welcome</h1>
+    <q-btn color="purple" @click="showNotif" label="Check Shuvo's Skill" />
+    <q-btn dense flat icon="back" label="logout" to="/"></q-btn>
   </div>
 </template>
 
@@ -14,7 +16,7 @@ export default {
     return {
       showNotif () {
         $q.notify({
-          message: 'Jim pinged you.',
+          message: 'Thanks Shuvobroto.',
           color: 'purple'
         })
       }
