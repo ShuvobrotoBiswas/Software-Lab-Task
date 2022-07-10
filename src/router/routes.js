@@ -2,6 +2,15 @@
 const routes = [
   {
     path: '/',
+    component: () => import('layouts/OnboardingLayout.vue'),
+    children: [
+      { path: '/', component: () => import('src/pages/qualityPage.vue') },
+      { path: '/convenientPage', component: () => import('src/pages/convenientPage.vue') },
+      { path: '/localPage', component: () => import('src/pages/localPage.vue') },
+    ]
+  },
+  {
+    path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '/login', component: () => import('src/pages/loginPage.vue') },
@@ -17,15 +26,7 @@ const routes = [
       { path: '/signupPage5', component: () => import('pages/signupPage5.vue') },
     ]
   },
-  {
-    path: '/',
-    component: () => import('layouts/OnboardingLayout.vue'),
-    children: [
-      { path: '/', component: () => import('src/pages/qualityPage.vue') },
-      { path: '/convenientPage', component: () => import('src/pages/convenientPage.vue') },
-      { path: '/localPage', component: () => import('src/pages/localPage.vue') },
-    ]
-  },
+
 
   // Always leave this as last one,
   // but you can also remove it
