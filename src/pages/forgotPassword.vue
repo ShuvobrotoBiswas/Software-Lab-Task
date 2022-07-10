@@ -9,7 +9,7 @@
         dense
         flat
         label="login"
-        to="/"
+        to="/login"
         color="orange-9"
       ></q-btn>
     </div>

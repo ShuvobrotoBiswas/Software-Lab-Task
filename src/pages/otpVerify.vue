@@ -5,7 +5,7 @@
     </div>
     <div class="row">
       <span class="text-h6">Remember your password?</span>
-      <q-btn dense flat label="login" to="/" color="orange-9"></q-btn>
+      <q-btn dense flat label="login" to="/login" color="orange-9"></q-btn>
     </div>
     <div class="q-py-md">
       <q-input

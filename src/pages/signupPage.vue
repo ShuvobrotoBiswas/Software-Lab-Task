@@ -103,7 +103,7 @@
           rounded
           label="login"
           class="q-mr-sm"
-          to="/"
+          to="/login"
           size="20px"
           flat
           color="black"

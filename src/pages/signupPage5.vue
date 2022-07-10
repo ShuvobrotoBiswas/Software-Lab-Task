@@ -29,7 +29,7 @@
         label="got it !"
         style="width: 300px"
         size="20px"
-        to="/"
+        to="/login"
         color="orange-9"
       />
     </div>
